@@ -4,29 +4,36 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: heading
-  label: Content
-- type: document
-  path: content/about/info.md
-  label: Info Page
 - type: directory
-  path: content/blog-posts
-  label: Blog posts
+  path: ''
+  label: Home
+  create: all
+  match: "**/*"
+  templates:
+  - about-page
+- type: directory
+  path: beers
+  label: Beers
   create: all
   match: "**/*"
   templates:
   - blog
-- type: document
-  path: content/data/authors.yaml
-  label: Authors List
 - type: heading
-  label: Config
-- type: document
-  path: themes/tale-theme/data/Settings.toml
-  label: Design Settings
-- type: document
-  path: config.toml
-  label: Site Config
+  label: Brewery Catering
+- type: directory
+  path: catering/history
+  label: First Brewery Incarnation
+  create: all
+  match: "**/*"
+  templates:
+  - blog
+- type: directory
+  path: catering/must-own
+  label: 5 Things Every Beer Lover Must Own
+  create: all
+  match: "**/*"
+  templates:
+  - blog
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
