@@ -22,14 +22,23 @@ fields:
 - type: datetime
   name: date
   label: Date
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Content
+- type: file
+  name: hero
+  label: Hero Image
 - type: text
   name: type
   label: type
   default: blog
   hidden: true
-- type: file
-  name: hero
-  label: Hero Image
 pages:
 - catering/history/5-things-every-beer-lover-must-own-1.md
 - catering/history/5-things-every-beer-lover-must-own.md
